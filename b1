@@ -1,0 +1,850 @@
+--[[                                                                  
+,-.----.                                                                          
+\    /  \                    ,--,                                                 
+|   :    \                 ,--.'|                   ,--,                          
+|   |  .\ :          ,--,  |  | :                 ,--.'|                          
+.   :  |: |        ,'_ /|  :  : '      .--.--.    |  |,          .---.            
+|   |   \ :   .--. |  | :  |  ' |     /  /    '   `--'_        /.  ./|    ,---.   
+|   : .   / ,'_ /| :  . |  '  | |    |  :  /`./   ,' ,'|     .-' . ' |   /     \  
+;   | |`-'  |  ' | |  . .  |  | :    |  :  ;_     '  | |    /___/ \: |  /    /  | 
+|   | ;     |  | ' |  | |  '  : |__   \  \    `.  |  | :    .   \  ' . .    ' / | 
+:   ' |     :  | : ;  ; |  |  | '.'|   `----.   \ '  : |__   \   \   ' '   ;   /| 
+:   : :     '  :  `--'   \ ;  :    ;  /  /`--'  / |  | '.'|   \   \    '   |  / | 
+|   | :     :  ,      .-./ |  ,   /  '--'.     /  ;  :    ;    \   \ | |   :    | 
+`---'.|      `--`----'      ---`-'     `--'---'   |  ,   /      '---"   \   \  /  
+  `---`                                            ---`-'                `----'  B1 
+--]]
+
+local WindowTable = {};
+WindowTable.CreateWindow = function(self)
+	local Tutorial = Instance.new("ScreenGui");
+	local MainFrame = Instance.new("Frame");
+	local SettingGui = Instance.new("Frame");
+	local UICorner_2 = Instance.new("UICorner");
+	local ImageButton = Instance.new("ImageButton");
+	local settignstext = Instance.new("TextButton");
+	local gui = MainFrame;
+	local toggle = true;
+	function onKeyPress(actionName, userInputState, inputObject)
+		if (userInputState == Enum.UserInputState.Begin) then
+			if (toggle == false) then
+				toggle = not toggle;
+				game.TweenService:Create(MainFrame, TweenInfo.new(0.01, Enum.EasingStyle.Circular, Enum.EasingDirection.In), {Position=UDim2.new(0.285, 0, 0.1, 0)}):Play();
+				gui.Visible = true;
+				game.TweenService:Create(SettingGui, TweenInfo.new(0.01, Enum.EasingStyle.Circular, Enum.EasingDirection.In), {Position=UDim2.new(0.285, 0, 0.72, 0)}):Play();
+			else
+				toggle = not toggle;
+				game.TweenService:Create(MainFrame, TweenInfo.new(0.1, Enum.EasingStyle.Circular, Enum.EasingDirection.In), {Position=UDim2.new(0.285, 0, 1, 0)}):Play();
+				game.TweenService:Create(SettingGui, TweenInfo.new(0.01, Enum.EasingStyle.Circular, Enum.EasingDirection.In), {Position=UDim2.new(0.285, 0, 1.5, 0)}):Play();
+			end
+		end
+	end
+	game.ContextActionService:BindAction("keyPress", onKeyPress, false, Enum.KeyCode.V);
+	local UICorner = Instance.new("UICorner");
+	local PlayerIcon = Instance.new("ImageLabel");
+	local Username = Instance.new("TextButton");
+	local Subscriptonstatus = Instance.new("TextButton");
+	local Icon = Instance.new("ImageButton");
+	local Pulsive = Instance.new("TextButton");
+	local ConfigButton = Instance.new("ImageButton");
+	local top = Instance.new("TextButton");
+	local bottom = Instance.new("TextButton");
+	local SideBar = Instance.new("Frame");
+	local allTabs = Instance.new("Frame");
+	local UIListLayout = Instance.new("UIListLayout");
+	local allPages = Instance.new("Frame");
+	local pagesFolder = Instance.new("Folder");
+	local Settings = Instance.new("ImageButton");
+	Tutorial.Name = "Tutorial";
+	Tutorial.Parent = game.CoreGui;
+	Tutorial.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
+	Tutorial.ResetOnSpawn = false;
+	MainFrame.Draggable = true;
+	MainFrame.Name = "MainFrame";
+	MainFrame.Parent = Tutorial;
+	MainFrame.BackgroundColor3 = Color3.fromRGB(10, 10, 10);
+	MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0);
+	MainFrame.BorderSizePixel = 0;
+	MainFrame.Position = UDim2.new(0.285, 0, 0.1, 0);
+	MainFrame.Size = UDim2.new(0, 678, 0, 459);
+	UICorner.Parent = MainFrame;
+	PlayerIcon.Name = "PlayerIcon";
+	PlayerIcon.Parent = MainFrame;
+	PlayerIcon.BackgroundTransparency = 1;
+	PlayerIcon.BorderSizePixel = 0;
+	PlayerIcon.Position = UDim2.new(0.931054056, 0, 0.0481776297, 0);
+	PlayerIcon.Size = UDim2.new(0, 32, 0, 32);
+	PlayerIcon.Image = "http://www.roblox.com/asset/?id=6022668898";
+	Username.Name = "Username";
+	Username.Parent = MainFrame;
+	Username.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+	Username.BackgroundTransparency = 1;
+	Username.BorderColor3 = Color3.fromRGB(0, 0, 0);
+	Username.BorderSizePixel = 0;
+	Username.Position = UDim2.new(0.834938169, 0, 0.0519086234, 0);
+	Username.Size = UDim2.new(0, 66, 0, 10);
+	Username.Font = Enum.Font.Gotham;
+	Username.Text = "StormsKitten";
+	Username.TextColor3 = Color3.fromRGB(255, 255, 255);
+	Username.TextSize = 13;
+	Username.TextStrokeColor3 = Color3.fromRGB(255, 255, 255);
+	Username.TextXAlignment = Enum.TextXAlignment.Right;
+	Subscriptonstatus.Name = "Subscriptonstatus";
+	Subscriptonstatus.Parent = MainFrame;
+	Subscriptonstatus.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+	Subscriptonstatus.BackgroundTransparency = 1;
+	Subscriptonstatus.BorderColor3 = Color3.fromRGB(0, 0, 0);
+	Subscriptonstatus.BorderSizePixel = 0;
+	Subscriptonstatus.Position = UDim2.new(0.830513358, 0, 0.0887117609, 0);
+	Subscriptonstatus.Size = UDim2.new(0, 68, 0, 12);
+	Subscriptonstatus.Font = Enum.Font.Nunito;
+	Subscriptonstatus.Text = "Free Subscription";
+	Subscriptonstatus.TextColor3 = Color3.fromRGB(99, 99, 99);
+	Subscriptonstatus.TextSize = 15;
+	Subscriptonstatus.TextStrokeColor3 = Color3.fromRGB(255, 255, 255);
+	Subscriptonstatus.TextXAlignment = Enum.TextXAlignment.Right;
+	Icon.Name = "Icon";
+	Icon.Parent = MainFrame;
+	Icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+	Icon.BackgroundTransparency = 1;
+	Icon.BorderColor3 = Color3.fromRGB(0, 0, 0);
+	Icon.BorderSizePixel = 0;
+	Icon.Position = UDim2.new(0.01179941, 0, 0.0266940463, 0);
+	Icon.Size = UDim2.new(0, 42, 0, 42);
+	Icon.AutoButtonColor = false;
+	Icon.Image = "http://www.roblox.com/asset/?id=13854975172";
+	Pulsive.Name = "Pulsive";
+	Pulsive.Parent = MainFrame;
+	Pulsive.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+	Pulsive.BackgroundTransparency = 1;
+	Pulsive.BorderColor3 = Color3.fromRGB(0, 0, 0);
+	Pulsive.BorderSizePixel = 0;
+	Pulsive.Position = UDim2.new(0.0812508464, 0, 0.0542125329, 0);
+	Pulsive.Size = UDim2.new(0, 227, 0, 17);
+	Pulsive.Font = Enum.Font.ArialBold;
+	Pulsive.Text = "Pulsive";
+	Pulsive.TextColor3 = Color3.fromRGB(255, 255, 255);
+	Pulsive.TextSize = 18;
+	Pulsive.TextStrokeColor3 = Color3.fromRGB(255, 255, 255);
+	Pulsive.TextWrapped = true;
+	Pulsive.TextXAlignment = Enum.TextXAlignment.Left;
+	ConfigButton.Name = "ConfigButton";
+	ConfigButton.Parent = MainFrame;
+	ConfigButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+	ConfigButton.BackgroundTransparency = 1;
+	ConfigButton.BorderColor3 = Color3.fromRGB(0, 0, 0);
+	ConfigButton.BorderSizePixel = 0;
+	ConfigButton.Position = UDim2.new(0.034, 0, 0.157, 0);
+	ConfigButton.Size = UDim2.new(0, 632, 0, 34);
+	ConfigButton.AutoButtonColor = false;
+	ConfigButton.Image = "http://www.roblox.com/asset/?id=13855172487";
+	ConfigButton.ImageColor3 = Color3.fromRGB(255, 181, 249);
+	top.Name = "top";
+	top.Parent = ConfigButton;
+	top.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+	top.BackgroundTransparency = 1;
+	top.BorderColor3 = Color3.fromRGB(0, 0, 0);
+	top.BorderSizePixel = 0;
+	top.Position = UDim2.new(0.0153180379, 0, 0.149325415, 0);
+	top.Size = UDim2.new(0, 199, 0, 15);
+	top.Font = Enum.Font.ArialBold;
+	top.Text = "Auto Config this category?";
+	top.TextColor3 = Color3.fromRGB(234, 234, 234);
+	top.TextSize = 13;
+	top.TextStrokeColor3 = Color3.fromRGB(255, 255, 255);
+	top.TextWrapped = true;
+	top.TextXAlignment = Enum.TextXAlignment.Left;
+	bottom.Name = "bottom";
+	bottom.Parent = ConfigButton;
+	bottom.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+	bottom.BackgroundTransparency = 1;
+	bottom.BorderColor3 = Color3.fromRGB(0, 0, 0);
+	bottom.BorderSizePixel = 0;
+	bottom.Position = UDim2.new(0.0153180379, 0, 0.506468296, 0);
+	bottom.Size = UDim2.new(0, 199, 0, 17);
+	bottom.Font = Enum.Font.Arial;
+	bottom.Text = "Just click this!";
+	bottom.TextColor3 = Color3.fromRGB(234, 234, 234);
+	bottom.TextSize = 10;
+	bottom.TextStrokeColor3 = Color3.fromRGB(255, 255, 255);
+	bottom.TextWrapped = true;
+	bottom.TextXAlignment = Enum.TextXAlignment.Left;
+	SideBar.Name = "SideBar";
+	SideBar.Parent = MainFrame;
+	SideBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+	SideBar.BackgroundTransparency = 1;
+	SideBar.BorderColor3 = Color3.fromRGB(0, 0, 0);
+	SideBar.BorderSizePixel = 0;
+	SideBar.Position = UDim2.new(0.034, 0, 0.118, 0);
+	SideBar.Size = UDim2.new(0, 632, 0, 18);
+	allTabs.Name = "allTabs";
+	allTabs.Parent = SideBar;
+	allTabs.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+	allTabs.BackgroundTransparency = 1;
+	allTabs.BorderColor3 = Color3.fromRGB(0, 0, 0);
+	allTabs.BorderSizePixel = 0;
+	allTabs.Position = UDim2.new(0.01, 0, 0.045, 0);
+	allTabs.Size = UDim2.new(0, 626, 0, 21);
+	UIListLayout.Parent = allTabs;
+	UIListLayout.FillDirection = Enum.FillDirection.Horizontal;
+	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder;
+	allPages.Name = "allPages";
+	allPages.Parent = MainFrame;
+	allPages.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+	allPages.BackgroundTransparency = 1;
+	allPages.BorderColor3 = Color3.fromRGB(0, 0, 0);
+	allPages.BorderSizePixel = 0;
+	allPages.Position = UDim2.new(0.0339233056, 0, 0.298474997, 0);
+	allPages.Size = UDim2.new(0, 630, 0, 319);
+	SettingGui.Name = "SettingGui";
+	SettingGui.Parent = Tutorial;
+	SettingGui.BackgroundColor3 = Color3.fromRGB(8, 7, 13);
+	SettingGui.BorderColor3 = Color3.fromRGB(0, 0, 0);
+	SettingGui.BorderSizePixel = 0;
+	SettingGui.Position = UDim2.new(0.285, 0, 0.72, 0);
+	SettingGui.Size = UDim2.new(0, 678, 0, 35);
+	SettingGui.Visible = false;
+	SettingGui.Transparency = 1;
+	UICorner_2.Parent = SettingGui;
+	Settings.Name = "Settings";
+	Settings.Parent = ConfigButton;
+	Settings.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+	Settings.BackgroundTransparency = 1;
+	Settings.BorderColor3 = Color3.fromRGB(0, 0, 0);
+	Settings.BorderSizePixel = 0;
+	Settings.Position = UDim2.new(0.78, 0, -1.1, 0);
+	Settings.Size = UDim2.new(0, 22, 0, 22);
+	Settings.ImageTransparency = 0.5;
+	Settings.Image = "http://www.roblox.com/asset/?id=6031280882";
+	Settings.ImageColor3 = Color3.fromRGB(104, 104, 104);
+	Settings.MouseButton1Click:Connect(function()
+		SettingGui.Visible = true;
+		game.TweenService:Create(SettingGui, TweenInfo.new(0.3, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Transparency=0}):Play();
+		ImageButton.ImageTransparency = 0;
+		settignstext.TextTransparency = 0;
+	end);
+	ImageButton.Parent = SettingGui;
+	ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+	ImageButton.BackgroundTransparency = 1;
+	ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0);
+	ImageButton.BorderSizePixel = 0;
+	ImageButton.Position = UDim2.new(0.952930987, 0, 0.155929148, 0);
+	ImageButton.Size = UDim2.new(0, 24, 0, 24);
+	ImageButton.Image = "http://www.roblox.com/asset/?id=6023426922";
+	ImageButton.MouseButton1Click:Connect(function()
+		game.TweenService:Create(SettingGui, TweenInfo.new(0.3, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {Transparency=1}):Play();
+		game.TweenService:Create(ImageButton, TweenInfo.new(0.3, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {ImageTransparency=1}):Play();
+		game.TweenService:Create(settignstext, TweenInfo.new(0.3, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {TextTransparency=1}):Play();
+		wait(0.18);
+		SettingGui.Visible = false;
+	end);
+	settignstext.Name = "settignstext";
+	settignstext.Parent = SettingGui;
+	settignstext.BackgroundColor3 = Color3.fromRGB(255, 197, 254);
+	settignstext.BackgroundTransparency = 1;
+	settignstext.BorderColor3 = Color3.fromRGB(0, 0, 0);
+	settignstext.BorderSizePixel = 0;
+	settignstext.Position = UDim2.new(0.0123905949, 0, 0.118060306, 0);
+	settignstext.Size = UDim2.new(0, 234, 0, 25);
+	settignstext.Font = Enum.Font.ArialBold;
+	settignstext.Text = "Settings";
+	settignstext.TextColor3 = Color3.fromRGB(255, 255, 255);
+	settignstext.TextSize = 20;
+	settignstext.TextStrokeColor3 = Color3.fromRGB(255, 255, 255);
+	settignstext.TextWrapped = true;
+	settignstext.TextXAlignment = Enum.TextXAlignment.Left;
+	pagesFolder.Name = "pagesFolder";
+	pagesFolder.Parent = allPages;
+	local TabHandler = {};
+	TabHandler.CreateTab = function(self, tabname)
+		tabname = tabname or "New Tab";
+		local tabButton = Instance.new("TextButton");
+		local newPage = Instance.new("ScrollingFrame");
+		local elementsListing = Instance.new("UIGridLayout");
+		local elementsPadding = Instance.new("UIPadding");
+		elementsListing.Name = "elementsListing";
+		elementsListing.Parent = newPage;
+		elementsListing.SortOrder = Enum.SortOrder.LayoutOrder;
+		elementsListing.CellPadding = UDim2.new(0, 31, 0, 0);
+		elementsListing.CellSize = UDim2.new(0, 300, 0, 30);
+		tabButton.Name = "tabButton";
+		tabButton.Parent = allTabs;
+		tabButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+		tabButton.BackgroundTransparency = 1;
+		tabButton.BorderColor3 = Color3.fromRGB(0, 0, 0);
+		tabButton.BorderSizePixel = 0;
+		tabButton.Size = UDim2.new(0, 52, 0, 17);
+		tabButton.Font = Enum.Font.SourceSans;
+		tabButton.Text = tabname;
+		tabButton.TextColor3 = Color3.fromRGB(200, 200, 200);
+		tabButton.TextSize = 15;
+		tabButton.TextXAlignment = Enum.TextXAlignment.Left;
+		tabButton.MouseButton1Click:Connect(function()
+			for i, v in next, pagesFolder:GetChildren() do
+				v.Visible = false;
+				tabButton.Font = Enum.Font.SourceSans;
+			end
+			newPage.Visible = true;
+			newPage.Visible = true;
+			currentTab = tabButton;
+			for i, tab in ipairs(allTabs:GetChildren()) do
+				if tab:IsA("TextButton") then
+					tab.Font = ((tab == currentTab) and Enum.Font.SourceSansBold) or Enum.Font.SourceSans;
+				end
+			end
+		end);
+		newPage.Name = "newPage";
+		newPage.Parent = pagesFolder;
+		newPage.Active = true;
+		newPage.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+		newPage.BackgroundTransparency = 1;
+		newPage.BorderColor3 = Color3.fromRGB(0, 0, 0);
+		newPage.BorderSizePixel = 0;
+		newPage.Position = UDim2.new(0, 0, -0.069, 0);
+		newPage.Size = UDim2.new(0, 631, 0, 342);
+		newPage.ScrollBarThickness = 0;
+		newPage.Visible = false;
+		newPage.ZIndex = 99;
+		elementsPadding.Name = "elementsPadding";
+		elementsPadding.Parent = newPage;
+		local ElementHandler = {};
+		ElementHandler.CreateButton = function(self, btnText, callback)
+			btnText = btnText or "Text Button";
+			callback = callback or function()
+			end;
+			local Seperator = Instance.new("TextButton");
+			Seperator.Name = "Seperator";
+			Seperator.Parent = newPage;
+			Seperator.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+			Seperator.BackgroundTransparency = 1;
+			Seperator.BorderColor3 = Color3.fromRGB(0, 0, 0);
+			Seperator.BorderSizePixel = 0;
+			Seperator.Position = UDim2.new(0.524564207, 0, 0.020008754, 0);
+			Seperator.Size = UDim2.new(0, 300, 0, 17);
+			Seperator.AutoButtonColor = false;
+			Seperator.Font = Enum.Font.SourceSans;
+			Seperator.Text = btnText;
+			Seperator.TextColor3 = Color3.fromRGB(0, 0, 0);
+			Seperator.TextSize = 14;
+			Seperator.TextXAlignment = Enum.TextXAlignment.Left;
+			Seperator.MouseButton1Click:Connect(function()
+				callback();
+			end);
+		end;
+		ElementHandler.CreateColorPicker = function(self, Colortext, callback)
+			Colortext = Colortext or "ColorPicker";
+			callback = callback or function()
+			end;
+			local CPFrame = Instance.new("TextButton");
+			local ColorPickertext = Instance.new("TextLabel");
+			local ColourPreview = Instance.new("Frame");
+			local cpreviewcorner = Instance.new("UICorner");
+			local ColourGradientFrame = Instance.new("TextButton");
+			local ColourGradient = Instance.new("UIGradient");
+			local Slider = Instance.new("TextButton");
+			local DarknessGradientFrame = Instance.new("TextButton");
+			local Slider_2 = Instance.new("TextButton");
+			local DarknessGradient = Instance.new("UIGradient");
+			CPFrame.Name = "CPFrame";
+			CPFrame.Parent = newPage;
+			CPFrame.BackgroundColor3 = Color3.fromRGB(18, 18, 18);
+			CPFrame.BorderColor3 = Color3.fromRGB(0, 0, 0);
+			CPFrame.BorderSizePixel = 0;
+			CPFrame.Position = UDim2.new(0.0142630748, 0, 0, 0);
+			CPFrame.Size = UDim2.new(0, 200, 0, 50);
+			CPFrame.AutoButtonColor = false;
+			CPFrame.Font = Enum.Font.SourceSans;
+			CPFrame.Text = "";
+			CPFrame.TextColor3 = Color3.fromRGB(0, 0, 0);
+			CPFrame.TextSize = 14;
+			ColorPickertext.Name = "ColorPickertext";
+			ColorPickertext.Parent = CPFrame;
+			ColorPickertext.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+			ColorPickertext.BackgroundTransparency = 1;
+			ColorPickertext.BorderColor3 = Color3.fromRGB(0, 0, 0);
+			ColorPickertext.BorderSizePixel = 0;
+			ColorPickertext.Position = UDim2.new(0.0518094065, 0, 0.136199945, 0);
+			ColorPickertext.Size = UDim2.new(0, 28, 0, 22);
+			ColorPickertext.Font = Enum.Font.SourceSans;
+			ColorPickertext.Text = Colortext;
+			ColorPickertext.TextColor3 = Color3.fromRGB(255, 255, 255);
+			ColorPickertext.TextSize = 15;
+			ColorPickertext.TextXAlignment = Enum.TextXAlignment.Left;
+			ColourPreview.Name = "ColourPreview";
+			ColourPreview.Parent = CPFrame;
+			ColourPreview.BackgroundColor3 = Color3.fromRGB(255, 0, 4);
+			ColourPreview.BorderSizePixel = 0;
+			ColourPreview.Position = UDim2.new(0.25991261, 0, 0.399532758, 0);
+			ColourPreview.Size = UDim2.new(0.0252873842, 0, 0.249938264, 0);
+			cpreviewcorner.Name = "cpreviewcorner";
+			cpreviewcorner.Parent = ColourPreview;
+			ColourGradientFrame.Name = "ColourGradientFrame";
+			ColourGradientFrame.Parent = CPFrame;
+			ColourGradientFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+			ColourGradientFrame.BorderSizePixel = 0;
+			ColourGradientFrame.Position = UDim2.new(0.306259364, 0, 0.42532764, 0);
+			ColourGradientFrame.Size = UDim2.new(0.647152543, 0, 0.213877112, 0);
+			ColourGradientFrame.AutoButtonColor = false;
+			ColourGradientFrame.Font = Enum.Font.SourceSans;
+			ColourGradientFrame.Text = "";
+			ColourGradientFrame.TextColor3 = Color3.fromRGB(0, 0, 0);
+			ColourGradientFrame.TextSize = 14;
+			ColourGradient.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 73, 76)),ColorSequenceKeypoint.new(0.18, Color3.fromRGB(235, 255, 103)),ColorSequenceKeypoint.new(0.4, Color3.fromRGB(79, 255, 85)),ColorSequenceKeypoint.new(0.6, Color3.fromRGB(97, 252, 255)),ColorSequenceKeypoint.new(0.79, Color3.fromRGB(99, 88, 255)),ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 103, 156))});
+			ColourGradient.Name = "ColourGradient";
+			ColourGradient.Parent = ColourGradientFrame;
+			Slider.Name = "Slider";
+			Slider.Parent = ColourGradientFrame;
+			Slider.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+			Slider.BorderSizePixel = 0;
+			Slider.Size = UDim2.new(0.0199999996, 0, 1, 0);
+			Slider.AutoButtonColor = false;
+			Slider.Font = Enum.Font.SourceSans;
+			Slider.Text = "";
+			Slider.TextColor3 = Color3.fromRGB(0, 0, 0);
+			Slider.TextSize = 14;
+			DarknessGradientFrame.Name = "DarknessGradientFrame";
+			DarknessGradientFrame.Parent = CPFrame;
+			DarknessGradientFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+			DarknessGradientFrame.BorderSizePixel = 0;
+			DarknessGradientFrame.Position = UDim2.new(0.306259364, 0, 0.619471252, 0);
+			DarknessGradientFrame.Size = UDim2.new(0.447152543, 0, 0.213877112, 0);
+			DarknessGradientFrame.AutoButtonColor = false;
+			DarknessGradientFrame.Font = Enum.Font.SourceSans;
+			DarknessGradientFrame.Text = "";
+			DarknessGradientFrame.TextColor3 = Color3.fromRGB(0, 0, 0);
+			DarknessGradientFrame.TextSize = 14;
+			DarknessGradientFrame.Visible = false;
+			Slider_2.Name = "Slider";
+			Slider_2.Parent = DarknessGradientFrame;
+			Slider_2.BackgroundColor3 = Color3.fromRGB(180, 5, 180);
+			Slider_2.BorderSizePixel = 0;
+			Slider_2.Size = UDim2.new(0.0199999996, 0, 1, 0);
+			Slider_2.AutoButtonColor = false;
+			Slider_2.Font = Enum.Font.SourceSans;
+			Slider_2.Text = "";
+			Slider_2.TextColor3 = Color3.fromRGB(0, 0, 0);
+			Slider_2.TextSize = 14;
+			Slider_2.Visible = false;
+			DarknessGradient.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))});
+			DarknessGradient.Name = "DarknessGradient";
+			DarknessGradient.Parent = DarknessGradientFrame;
+			local script = Instance.new("LocalScript", CPFrame);
+			local colourGradientFrame = script.Parent.ColourGradientFrame;
+			local colourSlider = colourGradientFrame:WaitForChild("Slider");
+			local darknessGradientFrame = script.Parent.DarknessGradientFrame;
+			local darknessSlider = darknessGradientFrame:WaitForChild("Slider");
+			local colourPreview = script.Parent.ColourPreview;
+			local mouse = game.Players.LocalPlayer:GetMouse();
+			local movingColourSlider = false;
+			local movingDarknessSlider = false;
+			colourGradientFrame.MouseLeave:Connect(function()
+				movingColourSlider = false;
+			end);
+			colourSlider.MouseButton1Down:Connect(function()
+				movingColourSlider = true;
+			end);
+			colourGradientFrame.MouseButton1Down:Connect(function()
+				movingColourSlider = true;
+			end);
+			darknessSlider.MouseButton1Down:Connect(function()
+				movingDarknessSlider = true;
+			end);
+			darknessGradientFrame.MouseButton1Down:Connect(function()
+				movingDarknessSlider = true;
+			end);
+			colourSlider.MouseButton1Up:Connect(function()
+				movingColourSlider = false;
+			end);
+			colourGradientFrame.MouseButton1Up:Connect(function()
+				movingColourSlider = false;
+			end);
+			darknessSlider.MouseButton1Up:Connect(function()
+				movingDarknessSlider = false;
+			end);
+			darknessGradientFrame.MouseButton1Up:Connect(function()
+				movingDarknessSlider = false;
+			end);
+			mouse.Button1Up:Connect(function()
+				movingColourSlider = false;
+				movingDarknessSlider = false;
+			end);
+			mouse.Move:Connect(function()
+				if movingColourSlider then
+					local xOffset = mouse.X - colourGradientFrame.AbsolutePosition.X;
+					xOffset = math.clamp(xOffset, 0, colourGradientFrame.AbsoluteSize.X);
+					local sliderPosNew = UDim2.new(0, xOffset, colourSlider.Position.Y);
+					colourSlider.Position = sliderPosNew;
+				end
+				if movingDarknessSlider then
+					local xOffset = mouse.X - colourGradientFrame.AbsolutePosition.X;
+					xOffset = math.clamp(xOffset, -48, colourGradientFrame.AbsoluteSize.Y);
+					local sliderPosNew = UDim2.new(0.25, xOffset, colourSlider.Position.Y);
+					darknessSlider.Position = sliderPosNew;
+				end
+			end);
+			function returnColour(percentage, gradientKeyPoints)
+				local leftColour = gradientKeyPoints[1];
+				local rightColour = gradientKeyPoints[#gradientKeyPoints];
+				local lerpPercent = 0.5;
+				local colour = leftColour.Value;
+				for i = 1, #gradientKeyPoints - 1 do
+					if ((gradientKeyPoints[i].Time <= percentage) and (gradientKeyPoints[i + 1].Time >= percentage)) then
+						leftColour = gradientKeyPoints[i];
+						rightColour = gradientKeyPoints[i + 1];
+						lerpPercent = (percentage - leftColour.Time) / (rightColour.Time - leftColour.Time);
+						colour = leftColour.Value:Lerp(rightColour.Value, lerpPercent);
+						return colour;
+					end
+				end
+			end
+			function updateColourPreview()
+				local colourMinXPos = colourGradientFrame.AbsolutePosition.X;
+				local colourMaxXPos = colourMinXPos + colourGradientFrame.AbsoluteSize.X;
+				local colourXPixelSize = colourMaxXPos - colourMinXPos;
+				local colourSliderX = colourSlider.AbsolutePosition.X;
+				local colourXPos = (colourSliderX - colourMinXPos) / colourXPixelSize;
+				local darknessMinXPos = darknessGradientFrame.AbsolutePosition.X;
+				local darknessMaxXPos = darknessMinXPos + darknessGradientFrame.AbsoluteSize.X;
+				local darknessXPixelSize = darknessMaxXPos - darknessMinXPos;
+				local darknessSliderX = darknessSlider.AbsolutePosition.X;
+				local darknessXPos = (darknessSliderX - darknessMinXPos) / darknessXPixelSize;
+				local darkness = returnColour(darknessXPos, darknessGradientFrame.DarknessGradient.Color.Keypoints);
+				local darknessR, darknessG, darknessB = 255 - math.floor(darkness.R * 255), 255 - math.floor(darkness.G * 255), 255 - math.floor(darkness.B * 255);
+				local colour = returnColour(colourXPos, colourGradientFrame.ColourGradient.Color.Keypoints);
+				local colourR, colourG, colourB = math.floor(colour.R * 255), math.floor(colour.G * 255), math.floor(colour.B * 255);
+				local resultColour = Color3.fromRGB(colourR - darknessR, colourG - darknessG, colourB - darknessB);
+				colourPreview.BackgroundColor3 = resultColour;
+			end
+			colourSlider:GetPropertyChangedSignal("Position"):Connect(updateColourPreview);
+			darknessSlider:GetPropertyChangedSignal("Position"):Connect(updateColourPreview);
+		end;
+		ElementHandler.CreateSlider = function(self, slideInfo, minvalue, maxvalue, callback)
+			slideInfo = slideInfo or "Slider";
+			minvalue = minvalue or 0;
+			maxvalue = maxvalue or 100;
+			callback = callback or function()
+			end;
+			local mouse = game.Players.LocalPlayer:GetMouse();
+			local uis = game:GetService("UserInputService");
+			local Value;
+			local sliderFrame = Instance.new("TextButton");
+			local slidervaluetext = Instance.new("TextLabel");
+			local SliderText = Instance.new("TextLabel");
+			local SliderButton = Instance.new("TextButton");
+			local SliderInner = Instance.new("Frame");
+			local Frame_2 = Instance.new("ImageLabel");
+			local corner = Instance.new("UICorner");
+			local UICorner_2 = Instance.new("UICorner");
+			local UICorner_3 = Instance.new("UICorner");
+			sliderFrame.Name = "sliderFrame";
+			sliderFrame.Parent = newPage;
+			sliderFrame.BackgroundColor3 = Color3.fromRGB(18, 18, 18);
+			sliderFrame.BackgroundTransparency = 0;
+			sliderFrame.BorderColor3 = Color3.fromRGB(0, 0, 0);
+			sliderFrame.BorderSizePixel = 0;
+			sliderFrame.Size = UDim2.new(0, 200, 0, 50);
+			sliderFrame.Font = Enum.Font.SourceSans;
+			sliderFrame.Text = "";
+			sliderFrame.TextColor3 = Color3.fromRGB(0, 0, 0);
+			sliderFrame.TextSize = 14;
+			sliderFrame.AutoButtonColor = false;
+			slidervaluetext.Name = "slidervaluetext";
+			slidervaluetext.Parent = sliderFrame;
+			slidervaluetext.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+			slidervaluetext.BackgroundTransparency = 1;
+			slidervaluetext.BorderColor3 = Color3.fromRGB(0, 0, 0);
+			slidervaluetext.BorderSizePixel = 0;
+			slidervaluetext.Position = UDim2.new(0.908225486, 0, 0.0933496109, 0);
+			slidervaluetext.Size = UDim2.new(0, 30, 0, 8);
+			slidervaluetext.Font = Enum.Font.SourceSans;
+			slidervaluetext.Text = "0.0";
+			slidervaluetext.TextColor3 = Color3.fromRGB(255, 255, 255);
+			slidervaluetext.TextSize = 14;
+			SliderText.Name = "SliderText";
+			SliderText.Parent = sliderFrame;
+			SliderText.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+			SliderText.BackgroundTransparency = 1;
+			SliderText.BorderColor3 = Color3.fromRGB(0, 0, 0);
+			SliderText.BorderSizePixel = 0;
+			SliderText.Position = UDim2.new(0.05, 0, 0.183, 0);
+			SliderText.Size = UDim2.new(0, 28, 0, 6);
+			SliderText.Font = Enum.Font.SourceSans;
+			SliderText.Text = slideInfo;
+			SliderText.TextColor3 = Color3.fromRGB(255, 255, 255);
+			SliderText.TextSize = 15;
+			SliderText.TextXAlignment = Enum.TextXAlignment.Left;
+			SliderInner.Name = "SliderInner";
+			SliderInner.Parent = SliderButton;
+			SliderInner.BackgroundColor3 = Color3.fromRGB(161, 161, 161);
+			SliderInner.BorderColor3 = Color3.fromRGB(255, 255, 255);
+			SliderInner.BorderSizePixel = 0;
+			SliderInner.Position = UDim2.new(-0.00833794847, 0, 0, 0);
+			SliderInner.Size = UDim2.new(0, 0, 0, 6);
+			Frame_2.Name = "Frame";
+			Frame_2.Parent = SliderInner;
+			Frame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+			Frame_2.BackgroundTransparency = 1;
+			Frame_2.Position = UDim2.new(0.967999981, 0, -0.45699996, 0);
+			Frame_2.Size = UDim2.new(0, 10, 0, 10);
+			Frame_2.Image = "rbxassetid://3570695787";
+			Frame_2.ScaleType = Enum.ScaleType.Slice;
+			Frame_2.SliceCenter = Rect.new(100, 100, 100, 100);
+			Frame_2.SliceScale = 0.12;
+			UICorner_2.Parent = SliderInner;
+			UICorner_3.CornerRadius = UDim.new(0, 4);
+			UICorner_3.Parent = SliderButton;
+			SliderButton.Name = "SliderButton";
+			SliderButton.Parent = sliderFrame;
+			SliderButton.BackgroundColor3 = Color3.fromRGB(15, 15, 15);
+			SliderButton.BorderColor3 = Color3.fromRGB(0, 0, 0);
+			SliderButton.BorderSizePixel = 0;
+			SliderButton.Position = UDim2.new(0.0538095087, 0, 0.675080359, 0);
+			SliderButton.Size = UDim2.new(0, 257, 0, 6);
+			SliderButton.Font = Enum.Font.SourceSans;
+			SliderButton.Text = "";
+			SliderButton.TextColor3 = Color3.fromRGB(0, 0, 0);
+			SliderButton.TextSize = 14;
+			SliderButton.AutoButtonColor = false;
+			SliderButton.MouseButton1Down:Connect(function()
+				Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 257) * SliderInner.AbsoluteSize.X) + tonumber(minvalue)) or 0;
+				pcall(function()
+					callback(Value);
+				end);
+				SliderInner.Size = UDim2.new(0, math.clamp(mouse.X - SliderInner.AbsolutePosition.X, 0, 257), 0, 5);
+				moveconnection = mouse.Move:Connect(function()
+					slidervaluetext.Text = Value .. ".0";
+					Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 257) * SliderInner.AbsoluteSize.X) + tonumber(minvalue));
+					pcall(function()
+						callback(Value);
+					end);
+					SliderInner.Size = UDim2.new(0, math.clamp(mouse.X - SliderInner.AbsolutePosition.X, 0, 257), 0, 5);
+				end);
+				releaseconnection = uis.InputEnded:Connect(function(Mouse)
+					if (Mouse.UserInputType == Enum.UserInputType.MouseButton1) then
+						Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 257) * SliderInner.AbsoluteSize.X) + tonumber(minvalue));
+						pcall(function()
+							callback(Value);
+						end);
+						SliderInner.Size = UDim2.new(0, math.clamp(mouse.X - SliderInner.AbsolutePosition.X, 0, 257), 0, 5);
+						moveconnection:Disconnect();
+						releaseconnection:Disconnect();
+					end
+				end);
+			end);
+		end;
+		
+			ElementHandler.Bind = function(self, bindText, presetbind,callback)
+			bindText = bindText or "Bind"
+			callback = callback or function()
+			end;
+local Bind = Instance.new("TextButton")
+local Title = Instance.new("TextLabel")
+local BindLabel = Instance.new("TextLabel")
+
+Bind.Name = "Bind"
+Bind.Parent = newPage
+Bind.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
+Bind.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Bind.BorderSizePixel = 0
+Bind.Size = UDim2.new(0, 200, 0, 50)
+Bind.Font = Enum.Font.SourceSans
+Bind.Text = ""
+Bind.TextColor3 = Color3.fromRGB(255, 255, 255)
+Bind.TextSize = 14.000
+Bind.AutoButtonColor = false
+
+Title.Name = "Title"
+Title.Parent = Bind
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0.0299999993, 0, -0.0333333351, 0)
+Title.Size = UDim2.new(0, 168, 0, 19)
+Title.Font = Enum.Font.SourceSans
+Title.Text = bindText
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 14.000
+Title.TextXAlignment = Enum.TextXAlignment.Left
+
+
+BindLabel.Name = "BindLabel"
+BindLabel.Parent = Title
+BindLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BindLabel.BackgroundTransparency = 1.000
+BindLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BindLabel.BorderSizePixel = 0
+BindLabel.Position = UDim2.new(1.16000265, 0, 0, 0)
+BindLabel.Size = UDim2.new(0, 87, 0, 19)
+BindLabel.Font = Enum.Font.SourceSans
+local Key = presetbind.Name
+BindLabel.Text = Key
+BindLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+BindLabel.TextSize = 14.000
+BindLabel.TextXAlignment = Enum.TextXAlignment.Right
+						
+Bind.MouseButton1Click:connect(function()
+					BindLabel.Text = "-"
+					local inputwait = game:GetService("UserInputService").InputBegan:wait()
+					if inputwait.KeyCode.Name ~= "Unknown" then
+						BindLabel.Text = inputwait .KeyCode.Name
+						Key = inputwait .KeyCode.Name
+					end
+
+					TweenService:Create(
+						BindLabel,
+						TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+						{TextTransparency = 0.3}
+					):Play()
+				end
+			)
+
+			game:GetService("UserInputService").InputBegan:connect(
+			function(current, pressed)
+				if not pressed then
+					if current.KeyCode.Name == Key then
+						pcall(callback)
+					end
+				end
+end
+	
+	)
+	end
+	ElementHandler.CreateToggles = function(self, togsInfo, callback)
+			togsInfo = togsInfo or "Toggle";
+			callback = callback or function()
+			end;
+			local togglesButton = Instance.new("TextButton");
+			local togglesInfo = Instance.new("TextLabel");
+			local Frame = Instance.new("ImageLabel");
+			local checkmark = Instance.new("ImageLabel");
+			togglesButton.Name = "togglesButton";
+			togglesButton.Parent = newPage;
+			togglesButton.BackgroundColor3 = Color3.fromRGB(18, 18, 18);
+			togglesButton.BackgroundTransparency = 0;
+			togglesButton.BorderColor3 = Color3.fromRGB(0, 0, 0);
+			togglesButton.BorderSizePixel = 0;
+			togglesButton.Position = UDim2.new(0, 0, 1, 0);
+			togglesButton.Size = UDim2.new(0, 300, 0, 31);
+			togglesButton.Font = Enum.Font.SourceSans;
+			togglesButton.Text = "";
+			togglesButton.TextColor3 = Color3.fromRGB(0, 0, 0);
+			togglesButton.TextSize = 14;
+			togglesInfo.Name = "togglesInfo";
+			togglesInfo.Parent = togglesButton;
+			togglesInfo.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+			togglesInfo.BackgroundTransparency = 1;
+			togglesInfo.BorderColor3 = Color3.fromRGB(0, 0, 0);
+			togglesInfo.BorderSizePixel = 0;
+			togglesInfo.Position = UDim2.new(0.106666669, 0, 0.0769001096, 0);
+			togglesInfo.Size = UDim2.new(0, 74, 0, 15);
+			togglesInfo.Font = Enum.Font.SourceSans;
+			togglesInfo.Text = togsInfo;
+			togglesInfo.TextColor3 = Color3.fromRGB(255, 255, 255);
+			togglesInfo.TextSize = 15;
+			togglesInfo.TextXAlignment = Enum.TextXAlignment.Left;
+			togglesButton.AutoButtonColor = false;
+			Frame.Name = "Frame";
+			Frame.Parent = togglesButton;
+			Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+			Frame.BackgroundTransparency = 1;
+			Frame.Position = UDim2.new(0.0300000142, 0, 0.05599046, 0);
+			Frame.Size = UDim2.new(0, 16, 0, 16);
+			Frame.Image = "rbxassetid://3570695787";
+			Frame.ImageTransparency = 0.94;
+			Frame.ScaleType = Enum.ScaleType.Slice;
+			Frame.SliceCenter = Rect.new(100, 100, 100, 100);
+			Frame.SliceScale = 0.04;
+			checkmark.Name = "checkmark";
+			checkmark.Parent = Frame;
+			checkmark.BackgroundTransparency = 1;
+			checkmark.BorderSizePixel = 0;
+			checkmark.Size = UDim2.new(0, 15, 0, 15);
+			checkmark.Image = "http://www.roblox.com/asset/?id=6031094667";
+			checkmark.ImageTransparency = 1;
+			local togs = false;
+			togglesButton.MouseButton1Click:Connect(function()
+				togs = not togs;
+				callback(togs);
+				if togs then
+					game.TweenService:Create(Frame, TweenInfo.new(0.17, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {ImageTransparency=0.4}):Play();
+					game.TweenService:Create(checkmark, TweenInfo.new(0.17, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {ImageTransparency=0}):Play();
+				else
+					game.TweenService:Create(Frame, TweenInfo.new(0.17, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {ImageTransparency=0.95}):Play();
+					game.TweenService:Create(checkmark, TweenInfo.new(0.17, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {ImageTransparency=1}):Play();
+				end
+			end);
+		end;
+		ElementHandler.CreateToggle = function(self, togInfo, callback)
+			togInfo = togInfo or "Toggle";
+			callback = callback or function()
+			end;
+			local toggleButton = Instance.new("TextButton");
+			local toggle = Instance.new("ImageLabel");
+			local circle = Instance.new("ImageLabel");
+			local toggleInfo = Instance.new("TextLabel");
+			toggleButton.Name = "toggleButton";
+			toggleButton.Parent = newPage;
+			toggleButton.BackgroundColor3 = Color3.fromRGB(18, 18, 18);
+			toggleButton.BackgroundTransparency = 0;
+			toggleButton.BorderColor3 = Color3.fromRGB(0, 0, 0);
+			toggleButton.BorderSizePixel = 0;
+			toggleButton.Position = UDim2.new(0, 0, 0.0100357309, 0);
+			toggleButton.Size = UDim2.new(0, 300, 0, 28);
+			toggleButton.AutoButtonColor = false;
+			toggleButton.Font = Enum.Font.SourceSans;
+			toggleButton.Text = "";
+			toggleButton.TextColor3 = Color3.fromRGB(0, 0, 0);
+			toggleButton.TextSize = 14;
+			toggleButton.TextXAlignment = Enum.TextXAlignment.Left;
+			toggle.Name = "toggle";
+			toggle.Parent = toggleButton;
+			toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+			toggle.BackgroundTransparency = 1;
+			toggle.Position = UDim2.new(0.843, 0, 0.384, 0);
+			toggle.Size = UDim2.new(0, 24, 0, 11);
+			toggle.Image = "rbxassetid://3570695787";
+			toggle.ImageTransparency = 0.9;
+			toggle.ScaleType = Enum.ScaleType.Slice;
+			toggle.SliceCenter = Rect.new(100, 100, 100, 100);
+			toggle.SliceScale = 0.12;
+			circle.Name = "circle";
+			circle.Parent = toggle;
+			circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+			circle.BackgroundTransparency = 1;
+			circle.Position = UDim2.new(0, 0, -0.071, 0);
+			circle.Size = UDim2.new(0, 13, 0, 13);
+			circle.Image = "rbxassetid://3570695787";
+			circle.ScaleType = Enum.ScaleType.Slice;
+			circle.SliceCenter = Rect.new(100, 100, 100, 100);
+			circle.SliceScale = 0.12;
+			toggleInfo.Name = "toggleInfo";
+			toggleInfo.Parent = toggleButton;
+			toggleInfo.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+			toggleInfo.BackgroundTransparency = 1;
+			toggleInfo.BorderColor3 = Color3.fromRGB(0, 0, 0);
+			toggleInfo.BorderSizePixel = 0;
+			toggleInfo.Position = UDim2.new(0.03, 0, 0.139, 0);
+			toggleInfo.Size = UDim2.new(0, 92, 0, 21);
+			toggleInfo.Font = Enum.Font.SourceSansBold;
+			toggleInfo.Text = togInfo;
+			toggleInfo.TextColor3 = Color3.fromRGB(255, 255, 255);
+			toggleInfo.TextSize = 16;
+			toggleInfo.TextXAlignment = Enum.TextXAlignment.Left;
+			local tog = false;
+			toggleButton.MouseButton1Click:Connect(function()
+				tog = not tog;
+				callback(tog);
+				if tog then
+					game.TweenService:Create(toggle, TweenInfo.new(0.17, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {ImageTransparency=0.3}):Play();
+					game.TweenService:Create(circle, TweenInfo.new(0.14, Enum.EasingStyle.Sine, Enum.EasingDirection.In), {Position=UDim2.new(0.43, 0, -0.08, 0)}):Play();
+				else
+					game.TweenService:Create(toggle, TweenInfo.new(0.17, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {ImageTransparency=0.9}):Play();
+					game.TweenService:Create(circle, TweenInfo.new(0.14, Enum.EasingStyle.Sine, Enum.EasingDirection.In), {Position=UDim2.new(0, 0, -0.08, 0)}):Play();
+				end
+			end);
+		end;
+		return ElementHandler;
+	end;
+	return TabHandler;
+end;
