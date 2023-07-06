@@ -46,10 +46,6 @@ function lib:init(ti, dosplash, visiblekey, deleteprevious)
     
     
     
-
-    if dosplash then
-      
-    end
         
 
     local main = Instance.new("Frame")
