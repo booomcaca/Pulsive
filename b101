@@ -1,6 +1,6 @@
  local Lighting = game:GetService("Lighting")
 local Sky = Lighting:FindFirstChild("Sky")
-local CustomSkybox = "rbxassetid://14022447073
+
 if Sky then
     Sky.SkyboxBk = "rbxassetid://14022371846"
     Sky.SkyboxDn = "rbxassetid://14022610792"
