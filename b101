@@ -1,4 +1,4 @@
+game.Lighting.Ambient = Color3.new(1, 0.5, 1)
 local Lighting = game:GetService("Lighting") local Sky = Lighting:FindFirstChild("Sky") if Sky then Sky.SkyboxBk = "rbxassetid://14022371846" Sky.SkyboxDn = "rbxassetid://14022610792" Sky.SkyboxFt = "rbxassetid://14022371846" Sky.SkyboxLf = "rbxassetid://14022371846" Sky.SkyboxRt = "rbxassetid://14022371846" Sky.SkyboxUp = stoplookingatmysourcecodebitch
-else local newSky = Instance.new("Sky", Lighting) newSky.SkyboxBk = "rbxassetid://14022371846" newSky.SkyboxDn = "rbxassetid://14022610792" newSky.SkyboxFt = "rbxassetid://14022371846" newSky.SkyboxLf = "rbxassetid://14022371846" newSky.SkyboxRt = "rbxassetid://14022371846" newSky.SkyboxUp =  "rbxassetid://14022404226" end
-game.Lighting.Ambient = Color3.new(1, 0.5, 1) while wait do wait() workspace.Clouds:Destroy() end
+else local newSky = Instance.new("Sky", Lighting) newSky.SkyboxBk = "rbxassetid://14022371846" newSky.SkyboxDn = "rbxassetid://14022610792" newSky.SkyboxFt = "rbxassetid://14022371846" newSky.SkyboxLf = "rbxassetid://14022371846" newSky.SkyboxRt = "rbxassetid://14022371846" newSky.SkyboxUp =  "rbxassetid://14022404226" end while wait do wait() workspace.Clouds:Destroy() end
 
