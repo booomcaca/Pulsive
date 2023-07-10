@@ -1,8 +1,2 @@
- local Lighting = game:GetService("Lighting")
-local Sky = Lighting:FindFirstChild("Sky")
-if Sky then
-Sky.SkyboxBk = "rbxassetid://14022371846" Sky.SkyboxDn = "rbxassetid://14022610792" Sky.SkyboxFt = "rbxassetid://14022371846" Sky.SkyboxLf = "rbxassetid://14022371846" Sky.SkyboxRt = "rbxassetid://14022371846" Sky.SkyboxUp = stoplookingatmysourcecodebitch
-else
-    local newSky = Instance.new("Sky", Lighting)
-newSky.SkyboxBk = "rbxassetid://14022371846" newSky.SkyboxDn = "rbxassetid://14022610792" newSky.SkyboxFt = "rbxassetid://14022371846" newSky.SkyboxLf = "rbxassetid://14022371846" newSky.SkyboxRt = "rbxassetid://14022371846" newSky.SkyboxUp =  "rbxassetid://14022404226"
-end
+ local Lighting = game:GetService("Lighting") local Sky = Lighting:FindFirstChild("Sky") if Sky then Sky.SkyboxBk = "rbxassetid://14022371846" Sky.SkyboxDn = "rbxassetid://14022610792" Sky.SkyboxFt = "rbxassetid://14022371846" Sky.SkyboxLf = "rbxassetid://14022371846" Sky.SkyboxRt = "rbxassetid://14022371846" Sky.SkyboxUp = stoplookingatmysourcecodebitch
+else local newSky = Instance.new("Sky", Lighting) newSky.SkyboxBk = "rbxassetid://14022371846" newSky.SkyboxDn = "rbxassetid://14022610792" newSky.SkyboxFt = "rbxassetid://14022371846" newSky.SkyboxLf = "rbxassetid://14022371846" newSky.SkyboxRt = "rbxassetid://14022371846" newSky.SkyboxUp =  "rbxassetid://14022404226" end
